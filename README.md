@@ -2,11 +2,12 @@
 
 The native `Promise.allSettled` function in JavaScript returns a promise that resolves after all the given promises have either been fulfilled or rejected, with an array of objects describing the outcome of each promise.
 
-Your task is to implement a custom function named `promiseAllSettled` that mimics the behavior of the native `Promise.allSettled`.
+Your task is to implement a custom function named `promiseAllSettledWithTimeout` that behaves similarly to the native `Promise.allSettled`, with the addition of a timeout feature. This function should accept an iterable of promises and a timeout value in milliseconds. It should return a promise that resolves with an array of result objects after all the given promises have either settled or the timeout has elapsed.
 
-This function should accept an iterable of promises and return a promise that resolves with an array of result objects after all the given promises have been settled. Each result object should contain the status string (either `'fulfilled'` or `'rejected'`) and the value (for fulfilled promises) or the reason (for rejected promises).
+Each result object should contain a `status` string that can be `'fulfilled'`, `'rejected'`. 
+For `'fulfilled'` promises, include a `value` property with the resolved value. For `'rejected'` promises, include a `reason` property with the rejection reason. If a promise has not settled by the time the timeout is reached, it should not be included in the array of results.
 
-After implementing the `promiseAllSettled` function, use it to handle multiple promises and log the outcomes.
+After implementing the `promiseAllSettledWithTimeout` function, use it to handle multiple promises and log the outcomes.
 
 ### Notes
 
