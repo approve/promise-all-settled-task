@@ -8,6 +8,21 @@ Each result object should contain a `status` string that can be `'fulfilled'`, `
 For `'fulfilled'` promises, include a `value` property with the resolved value. For `'rejected'` promises, include a `reason` property with the rejection reason. If a promise has not settled by the time the timeout is reached, its result object should have the status `'timed_out'`.
 After implementing the `promiseAllSettledWithTimeout` function, use it to handle multiple promises and log the outcomes.
 
+
+Function signature:
+```
+function promiseAllSettledWithTimeout(promises: Promise[], timeout: number) {}
+```
+
+Expected output:
+```
+[
+    { status: 'fulfilled', value: 100 },
+    { status: 'timed_out' },
+    { status: 'rejected', value: 'error' }
+]
+```
+
 ### Notes
 
 1. Ensure that the function handles an empty array of promises and returns an immediately resolved promise with an empty array.
