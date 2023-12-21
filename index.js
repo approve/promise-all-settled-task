@@ -8,12 +8,13 @@ function promiseAllSettledWithTimeout(promises, timeout) {
 }
 
 // Usage of the custom promiseAllSettled function
-promiseAllSettledWithTimeout([promise1, promise2, promise3], timeout = 0)
+promiseAllSettledWithTimeout([promise1, promise2, promise3], timeout = 30)
     .then(results => {
         console.log(results);
         // Expected output:
         // [
         //   { status: 'fulfilled', value: 100 },
+        //   { status: 'timed_out' },
         //   { status: 'fulfilled', value: 'success' }
         // ]
     })
