@@ -11,7 +11,7 @@ After implementing the `promiseAllSettled` function, use it to handle multiple p
 
 Function signature:
 ```
-function promiseAllSettled(promises, timeout: number) {}
+function promiseAllSettled(promises, timeout) {}
 ```
 
 Expected output:
